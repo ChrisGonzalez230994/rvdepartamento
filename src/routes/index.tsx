@@ -48,7 +48,7 @@ const photos = [
   { src: img8.url, altEs: "Bacha de apoyo y espejo circular iluminado", altEn: "Vessel sink and lit round mirror" },
   { src: img15.url, altEs: "Patio interno con dispenser y tender", altEn: "Inner patio with water dispenser and dryer" },
   { src: img9.url, altEs: "Entrada Edificio Astor", altEn: "Astor Building entrance" },
-  { src: img18.url, altEs: "Hall del edificio", antEn: "Building hall", altEn: "Building hall" },
+  { src: img18.url, altEs: "Hall del edificio", altEn: "Building hall" },
   { src: img4.url, altEs: "Vista a la playa desde la calle Alsina", altEn: "Beach view from Alsina street" },
 ];
 
