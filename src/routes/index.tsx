@@ -137,8 +137,10 @@ const dict = {
   },
 } as const;
 
-const LangCtx = createContext<{ lang: Lang; t: typeof dict.es; setLang: (l: Lang) => void }>({
-  lang: "es", t: dict.es, setLang: () => {},
+type Dict = (typeof dict)["es"];
+
+const LangCtx = createContext<{ lang: Lang; t: Dict; setLang: (l: Lang) => void }>({
+  lang: "es", t: dict.es as Dict, setLang: () => {},
 });
 const useT = () => useContext(LangCtx);
 
