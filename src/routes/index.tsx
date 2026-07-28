@@ -220,7 +220,7 @@ function Index() {
   }, [lang]);
 
   return (
-    <LangCtx.Provider value={{ lang, t: dict[lang], setLang }}>
+    <LangCtx.Provider value={{ lang, t: dict[lang] as Dict, setLang }}>
       <div className="min-h-screen bg-background text-foreground">
         <Nav />
         <Hero />
