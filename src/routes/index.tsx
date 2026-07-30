@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useRef, createContext, useContext, ty
 import {
   MapPin, Waves, Wifi, Tv, Snowflake, Flame, Users, BedDouble,
   Bath, ChefHat, ShieldCheck, Sparkles, Phone, Mail, MessageCircle,
-  ChevronLeft, ChevronRight, X, Star, Languages,
+  ChevronLeft, ChevronRight, X, Star, Languages, BedSingle as BunkBed,
 } from "lucide-react";
 
 import img1 from "@/assets/apt/apt-1.jpg.asset.json";
@@ -60,7 +60,9 @@ const dict = {
     heroLoc: "Alsina y la Costa · Loma de Stella Maris · Mar del Plata",
     heroTitle1: "Una experiencia única",
     heroTitle2: "a pasos del mar.",
-    heroDesc: "Departamento boutique de 3 ambientes en planta baja, diseñado para el descanso absoluto de hasta 5 personas. A metros del Torreón del Monje y las playas de Bahía Varese.",
+    heroTitleM1: "Una experiencia única a pasos del",
+    heroTitleM2: "mar",
+    heroDesc: "Situado en el corazón de Mar del Plata, el apartamento se encuentra a metros de las playas Torreón del Monje y Bahía Varese. Esta unidad de tres ambientes cuenta con cocina totalmente equipada, baño privado y una acogedora zona de estar diseñada para alojar cómodamente hasta a cinco personas.",
     heroCTA: "Consultar por WhatsApp",
     heroGallery: "Ver galería",
     upTo5: "Hasta 5 personas",
@@ -73,14 +75,14 @@ const dict = {
     spacesEyebrow: "El Espacio", spacesTitle: "Diseñado para el descanso",
     spacesIntro: "Ventanales con Doble Vidriado Hermético (DVH), persianas eléctricas de seguridad y cortinas blackout aseguran silencio y oscuridad total.",
     spaces: [
-      { title: "Dormitorio Principal", text: "Cama matrimonial con respaldo de diseño y detalles de categoría." },
+      { title: "Dormitorio Principal", text: "Cama matrimonial con respaldo de diseño, ropa de cama y placard." },
       { title: "Segundo Dormitorio", text: "Cama individual más una cama extra deslizable tipo marinera." },
-      { title: "Living", text: "Amplio, con cómodo sillón cama de alta calidad y Smart TV 43\"." },
-      { title: "Baño Boutique", text: "Bacha de apoyo y espejo circular con iluminación LED táctil." },
+      { title: "Living", text: "Amplio y luminoso, pensado para el descanso. Cuenta con aire acondicionado, un cómodo sillón cama y Smart TV de 43\"." },
+      { title: "Baño Boutique", text: "Ducha, artículos de tocador y espejo circular con iluminación LED táctil." },
       { title: "Cocina Equipada", text: "Totalmente equipada, con cesto automático por sensor de movimiento." },
       { title: "Patio Interno", text: "Dispenser frío/calor, tender de gran capacidad y kit de playa completo." },
     ],
-    amenEyebrow: "Equipamiento", amenTitle: "Todo lo que necesitás",
+    amenEyebrow: "Equipamiento", amenTitle: "Todo lo que necesitas",
     amenGroups: [
       { title: "Tecnología y Confort", items: ["Calefacción central por radiadores","Aire Acondicionado frío/calor","WiFi de alta velocidad (300 MB)","Smart TV 43\" con servicio de Flow","Cesto automático con sensor de movimiento"] },
       { title: "Servicios Exclusivos", items: ["Dispenser de agua frío/calor (cortesía)","Kit de Playa: 2 reposeras y sombrilla","Tender de gran capacidad","Blanquería con lavado artesanal propio","Puntaje 9,9 de nuestros huéspedes"] },
@@ -88,7 +90,7 @@ const dict = {
     ],
     locEyebrow: "Ubicación", locTitle: "Loma de Stella Maris",
     locIntro: "Edificio Astor · Alsina 2161. Acceso inmediato a la playa sin usar el auto, a pasos del Torreón del Monje y Bahía Varese.",
-    contactEyebrow: "Contacto", contactTitle: "Reservá tu estadía",
+    contactEyebrow: "Contacto", contactTitle: "Reserva tu estadía",
     contactIntro: "Escribinos por WhatsApp o email y te respondemos a la brevedad.",
     phoneLbl: "Teléfono",
     footerRights: "Todos los derechos reservados",
@@ -101,7 +103,9 @@ const dict = {
     heroLoc: "Alsina & the Coast · Loma de Stella Maris · Mar del Plata",
     heroTitle1: "A unique experience",
     heroTitle2: "steps from the sea.",
-    heroDesc: "Boutique 3-room ground-floor apartment designed for the absolute rest of up to 5 guests. Steps from Torreón del Monje and the beaches of Bahía Varese.",
+    heroTitleM1: "A unique experience steps from the",
+    heroTitleM2: "sea",
+    heroDesc: "Located in the heart of Mar del Plata, the apartment is just steps from Torreón del Monje and Bahía Varese beaches. This three-room unit features a fully equipped kitchen, private bathroom and a cozy living area designed to comfortably host up to five guests.",
     heroCTA: "Chat on WhatsApp",
     heroGallery: "View gallery",
     upTo5: "Up to 5 guests",
@@ -114,10 +118,10 @@ const dict = {
     spacesEyebrow: "The Space", spacesTitle: "Designed for rest",
     spacesIntro: "Double-glazed windows (DVH), electric security shutters and blackout curtains ensure total silence and darkness.",
     spaces: [
-      { title: "Main Bedroom", text: "Queen bed with designer headboard and premium details." },
+      { title: "Main Bedroom", text: "Queen bed with designer headboard, bed linen and wardrobe." },
       { title: "Second Bedroom", text: "Single bed plus an extra pull-out trundle bed." },
-      { title: "Living Room", text: "Spacious, with a high-quality sofa bed and 43\" Smart TV." },
-      { title: "Boutique Bathroom", text: "Vessel sink and round mirror with touch LED lighting." },
+      { title: "Living Room", text: "Spacious and bright, designed for rest. Air conditioning, a comfortable sofa bed and a 43\" Smart TV." },
+      { title: "Boutique Bathroom", text: "Shower, toiletries and round mirror with touch LED lighting." },
       { title: "Equipped Kitchen", text: "Fully equipped, with a motion-sensor automatic bin." },
       { title: "Inner Patio", text: "Hot/cold water dispenser, large drying rack and complete beach kit." },
     ],
@@ -439,7 +443,7 @@ function SectionHead({ eyebrow, title }: { eyebrow: string; title: string }) {
 
 function Spaces() {
   const { t } = useT();
-  const icons = [BedDouble, Users, Tv, Bath, ChefHat, Sparkles];
+  const icons = [BedDouble, BunkBed, Tv, Bath, ChefHat, Sparkles];
   return (
     <section id="espacios" className="py-24 bg-secondary/40">
       <div className="max-w-6xl mx-auto px-6">
