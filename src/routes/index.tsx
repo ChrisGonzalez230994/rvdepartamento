@@ -306,8 +306,14 @@ function Hero() {
           {t.heroLoc}
         </div>
         <h1 className="font-display text-5xl md:text-7xl leading-[1.05] max-w-3xl animate-fade-in">
-          {t.heroTitle1}<br />
-          <span className="text-accent italic font-normal">{t.heroTitle2}</span>
+          <span className="md:hidden">
+            {t.heroTitleM1}<br />
+            <span className="text-accent italic font-normal">{t.heroTitleM2}</span>
+          </span>
+          <span className="hidden md:inline">
+            {t.heroTitle1}<br />
+            <span className="text-accent italic font-normal">{t.heroTitle2}</span>
+          </span>
         </h1>
         <p className="mt-6 max-w-xl text-white/85 text-lg animate-fade-in">{t.heroDesc}</p>
         <div className="mt-8 flex flex-wrap gap-3 animate-fade-in">
