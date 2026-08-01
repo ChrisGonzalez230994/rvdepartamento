@@ -255,7 +255,7 @@ function LangToggle({ dark = false }: { dark?: boolean }) {
       }`}
     >
       <Languages className="w-3.5 h-3.5" />
-      {lang === "es" ? "EN" : "ES"}
+      {lang === "es" ? "ES" : "EN"}
     </button>
   );
 }
