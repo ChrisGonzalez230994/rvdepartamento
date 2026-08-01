@@ -331,8 +331,8 @@ function Hero() {
         loading="eager"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
-      <div className="relative max-w-6xl mx-auto px-6 pb-16 md:pb-24 text-white w-full">
-        <div className="flex items-center gap-2 text-sm mb-4 text-white/80 animate-fade-in">
+      <div className="relative max-w-6xl mx-auto px-6 pt-8 pb-10 md:pt-0 md:pb-24 text-white w-full">
+        <div className="flex items-center gap-2 text-sm mt-6 md:mt-0 mb-4 text-white/80 animate-fade-in">
           <MapPin className="w-4 h-4 text-accent" />
           {t.heroLoc}
         </div>
