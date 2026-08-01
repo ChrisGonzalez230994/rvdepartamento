@@ -262,6 +262,13 @@ function LangToggle({ dark = false }: { dark?: boolean }) {
 
 function Nav() {
   const { t } = useT();
+  const [open, setOpen] = useState(false);
+  const links = [
+    { href: "#galeria", label: t.nav.gallery },
+    { href: "#espacios", label: t.nav.spaces },
+    { href: "#ubicacion", label: t.nav.location },
+    { href: "#contacto", label: t.nav.contact },
+  ];
   return (
     <header className="fixed top-0 inset-x-0 z-40 backdrop-blur-md bg-background/70 border-b border-border/60">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
@@ -269,13 +276,37 @@ function Nav() {
           Una Experiencia <span className="text-accent">Única</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#galeria" className="hover:text-foreground transition">{t.nav.gallery}</a>
-          <a href="#espacios" className="hover:text-foreground transition">{t.nav.spaces}</a>
-          <a href="#ubicacion" className="hover:text-foreground transition">{t.nav.location}</a>
-          <a href="#contacto" className="hover:text-foreground transition">{t.nav.contact}</a>
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="hover:text-foreground transition">{l.label}</a>
+          ))}
         </nav>
         <div className="flex items-center gap-2">
           <LangToggle />
+          <div className="relative">
+            <button
+              type="button"
+              aria-label="Menú"
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="inline-flex items-center justify-center rounded-full border border-border px-2.5 py-1.5 text-muted-foreground hover:text-foreground transition"
+            >
+              {open ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            </button>
+            {open && (
+              <div className="absolute right-0 mt-2 w-44 rounded-xl border border-border bg-background/95 backdrop-blur-md shadow-lg overflow-hidden animate-fade-in">
+                {links.map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="block px-4 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition"
+                  >
+                    {l.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
           <a
             href={`https://wa.me/${PHONE}?text=${encodeURIComponent(t.whatsappMsg)}`}
             target="_blank" rel="noopener noreferrer"
