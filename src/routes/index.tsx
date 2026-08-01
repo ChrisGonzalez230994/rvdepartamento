@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useRef, createContext, useContext, ty
 import {
   MapPin, Waves, Wifi, Tv, Snowflake, Flame, Users, BedDouble,
   Bath, ChefHat, ShieldCheck, Sparkles, Phone, Mail, MessageCircle,
-  ChevronLeft, ChevronRight, X, Star, Languages, BedSingle as BunkBed,
+  ChevronLeft, ChevronRight, X, Star, Languages, BedSingle as BunkBed, Menu,
 } from "lucide-react";
 
 import img1 from "@/assets/apt/apt-1.jpg.asset.json";
