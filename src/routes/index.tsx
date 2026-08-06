@@ -326,7 +326,7 @@ function Hero() {
   return (
     <section id="top" className="relative min-h-screen flex items-end pt-16">
       <img
-        src={photos[0].src}
+        src={heroImg.url}
         alt={lang === "es" ? photos[0].altEs : photos[0].altEn}
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"
