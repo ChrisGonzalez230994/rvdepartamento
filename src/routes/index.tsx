@@ -6,25 +6,25 @@ import {
   ChevronLeft, ChevronRight, X, Star, Languages, BedSingle as BunkBed, Menu,
 } from "lucide-react";
 
-import img1 from "@/assets/apt/apt-1.jpg.asset.json";
-import img2 from "@/assets/apt/apt-2.jpg.asset.json";
-import img3 from "@/assets/apt/apt-3.jpg.asset.json";
-import img4 from "@/assets/apt/apt-4.jpg.asset.json";
-import img5 from "@/assets/apt/apt-5.jpg.asset.json";
-import img6 from "@/assets/apt/apt-6.jpg.asset.json";
-import img7 from "@/assets/apt/apt-7.jpg.asset.json";
-import img8 from "@/assets/apt/apt-8.jpg.asset.json";
-import img9 from "@/assets/apt/apt-9.jpg.asset.json";
-import img10 from "@/assets/apt/apt-10.jpg.asset.json";
-import img11 from "@/assets/apt/apt-11.jpg.asset.json";
-import img12 from "@/assets/apt/apt-12.jpg.asset.json";
-import img13 from "@/assets/apt/apt-13.jpg.asset.json";
-import img14 from "@/assets/apt/apt-14.jpg.asset.json";
-import img15 from "@/assets/apt/apt-15.jpg.asset.json";
-import img16 from "@/assets/apt/apt-16.jpg.asset.json";
-import img17 from "@/assets/apt/apt-17.jpg.asset.json";
-import img18 from "@/assets/apt/apt-18.jpg.asset.json";
-import heroImg from "@/assets/apt/hero.jpg.asset.json";
+import img1 from "@/assets/apt/apt-1.jpg";
+import img2 from "@/assets/apt/apt-2.jpg";
+import img3 from "@/assets/apt/apt-3.jpg";
+import img4 from "@/assets/apt/apt-4.jpg";
+import img5 from "@/assets/apt/apt-5.jpg";
+import img6 from "@/assets/apt/apt-6.jpg";
+import img7 from "@/assets/apt/apt-7.jpg";
+import img8 from "@/assets/apt/apt-8.jpg";
+import img9 from "@/assets/apt/apt-9.jpg";
+import img10 from "@/assets/apt/apt-10.jpg";
+import img11 from "@/assets/apt/apt-11.jpg";
+import img12 from "@/assets/apt/apt-12.jpg";
+import img13 from "@/assets/apt/apt-13.jpg";
+import img14 from "@/assets/apt/apt-14.jpg";
+import img15 from "@/assets/apt/apt-15.jpg";
+import img16 from "@/assets/apt/apt-16.jpg";
+import img17 from "@/assets/apt/apt-17.jpg";
+import img18 from "@/assets/apt/apt-18.jpg";
+import heroImg from "@/assets/apt/hero.jpg";
 
 const PHONE = "542235908313";
 const PHONE_DISPLAY = "+54 223 590 8313";
@@ -33,24 +33,24 @@ const EMAIL = "romanvvanesa@gmail.com";
 type Lang = "es" | "en";
 
 const photos = [
-  { src: img6.url, altEs: "Living comedor con sillón y mesa", altEn: "Living-dining room with sofa and table" },
-  { src: img1.url, altEs: "Dormitorio principal con cama matrimonial", altEn: "Main bedroom with queen bed" },
-  { src: img10.url, altEs: "Living con decoración moderna", altEn: "Modern living room" },
-  { src: img13.url, altEs: "Comedor con mesa de vidrio y sillón", altEn: "Dining area with glass table and sofa" },
-  { src: img17.url, altEs: "Sillón cama y decoración de espejos", altEn: "Sofa bed and mirror decor" },
-  { src: img11.url, altEs: "Smart TV en el living", altEn: "Smart TV in living room" },
-  { src: img14.url, altEs: "Ventanal con cortinas y lámpara de pie", altEn: "Window with curtains and floor lamp" },
-  { src: img7.url, altEs: "Segundo dormitorio con cama marinera", altEn: "Second bedroom with trundle bed" },
-  { src: img12.url, altEs: "Placard con blanquería", altEn: "Wardrobe with linens" },
-  { src: img3.url, altEs: "Cocina totalmente equipada", altEn: "Fully equipped kitchen" },
-  { src: img5.url, altEs: "Detalle de cocina con mesada de granito", altEn: "Kitchen detail with granite countertop" },
-  { src: img16.url, altEs: "Cocina con aire acondicionado", altEn: "Kitchen with air conditioning" },
-  { src: img2.url, altEs: "Baño boutique con espejo LED", altEn: "Boutique bathroom with LED mirror" },
-  { src: img8.url, altEs: "Bacha de apoyo y espejo circular iluminado", altEn: "Vessel sink and lit round mirror" },
-  { src: img15.url, altEs: "Patio interno con dispenser y tender", altEn: "Inner patio with water dispenser and dryer" },
-  { src: img9.url, altEs: "Entrada Edificio Astor", altEn: "Astor Building entrance" },
-  { src: img18.url, altEs: "Hall del edificio", altEn: "Building hall" },
-  { src: img4.url, altEs: "Vista a la playa desde la calle Alsina", altEn: "Beach view from Alsina street" },
+  { src: img6, altEs: "Living comedor con sillón y mesa", altEn: "Living-dining room with sofa and table" },
+  { src: img1, altEs: "Dormitorio principal con cama matrimonial", altEn: "Main bedroom with queen bed" },
+  { src: img10, altEs: "Living con decoración moderna", altEn: "Modern living room" },
+  { src: img13, altEs: "Comedor con mesa de vidrio y sillón", altEn: "Dining area with glass table and sofa" },
+  { src: img17, altEs: "Sillón cama y decoración de espejos", altEn: "Sofa bed and mirror decor" },
+  { src: img11, altEs: "Smart TV en el living", altEn: "Smart TV in living room" },
+  { src: img14, altEs: "Ventanal con cortinas y lámpara de pie", altEn: "Window with curtains and floor lamp" },
+  { src: img7, altEs: "Segundo dormitorio con cama marinera", altEn: "Second bedroom with trundle bed" },
+  { src: img12, altEs: "Placard con blanquería", altEn: "Wardrobe with linens" },
+  { src: img3, altEs: "Cocina totalmente equipada", altEn: "Fully equipped kitchen" },
+  { src: img5, altEs: "Detalle de cocina con mesada de granito", altEn: "Kitchen detail with granite countertop" },
+  { src: img16, altEs: "Cocina con aire acondicionado", altEn: "Kitchen with air conditioning" },
+  { src: img2, altEs: "Baño boutique con espejo LED", altEn: "Boutique bathroom with LED mirror" },
+  { src: img8, altEs: "Bacha de apoyo y espejo circular iluminado", altEn: "Vessel sink and lit round mirror" },
+  { src: img15, altEs: "Patio interno con dispenser y tender", altEn: "Inner patio with water dispenser and dryer" },
+  { src: img9, altEs: "Entrada Edificio Astor", altEn: "Astor Building entrance" },
+  { src: img18, altEs: "Hall del edificio", altEn: "Building hall" },
+  { src: img4, altEs: "Vista a la playa desde la calle Alsina", altEn: "Beach view from Alsina street" },
 ];
 
 const dict = {
@@ -326,7 +326,7 @@ function Hero() {
   return (
     <section id="top" className="relative min-h-screen flex items-end pt-16">
       <img
-        src={heroImg.url}
+        src={heroImg}
         alt={lang === "es" ? photos[0].altEs : photos[0].altEn}
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"
