@@ -24,7 +24,7 @@ import img15 from "@/assets/apt/apt-15.jpg";
 import img16 from "@/assets/apt/apt-16.jpg";
 import img17 from "@/assets/apt/apt-17.jpg";
 import img18 from "@/assets/apt/apt-18.jpg";
-import heroImg from "@/assets/apt/hero.jpg";
+const heroImg = img1;
 
 const PHONE = "542235908313";
 const PHONE_DISPLAY = "+54 223 590 8313";
